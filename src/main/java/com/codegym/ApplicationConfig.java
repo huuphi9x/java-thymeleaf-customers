@@ -1,7 +1,5 @@
 package com.codegym;
 
-import com.codegym.service.CustomerService;
-import com.codegym.service.CustomerServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -19,7 +17,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.codegym")
-public class AppConfiguration implements ApplicationContextAware {
+public class ApplicationConfig implements ApplicationContextAware {
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
@@ -51,9 +49,4 @@ public class AppConfiguration implements ApplicationContextAware {
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
-
-//    @Bean
-//    public CustomerService customerService() {
-//        return new CustomerServiceImpl();
-//    }
 }
